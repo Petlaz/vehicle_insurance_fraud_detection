@@ -22,4 +22,3 @@ scipy==1.11.4
 seaborn==0.12.2
 pydantic==2.8.0
 imbalanced-learn==0.12.4
-
