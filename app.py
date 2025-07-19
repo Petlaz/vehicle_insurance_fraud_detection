@@ -84,4 +84,4 @@ with st.form("fraud_form"):
         st.success(f"Prediction: {'🟥 Fraud' if prediction == 1 else '🟩 Non-Fraud'}")
         st.info(f"Fraud Probability: {prob:.2%}")
         
-# run this app with: streamlit run streamlit_app.py
+# run this app with: streamlit run app.py
