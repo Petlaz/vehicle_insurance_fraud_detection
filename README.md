@@ -59,3 +59,10 @@ Machine learning model for detecting fraudulent vehicle insurance claims using c
 
 --------
 
+## 🚀 Getting Started
+
+### 📦 Create and activate the environment
+
+```bash
+conda env create -f environment.yml
+conda activate fraud-py311

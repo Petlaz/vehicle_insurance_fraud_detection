@@ -1,30 +1,37 @@
-from pathlib import Path
+# vehicle_insurance_fraud_detection/modeling/predict.py
 
-from loguru import logger
-from tqdm import tqdm
-import typer
+import joblib
+import pandas as pd
+import numpy as np
+from vehicle_insurance_fraud_detection.config import MODELS_DIR
+from vehicle_insurance_fraud_detection.dataset import load_clean_data
+from sklearn.metrics import classification_report
 
-from vehicle_insurance_fraud_detection.config import MODELS_DIR, PROCESSED_DATA_DIR
+def predict_on_test_sample():
+    # Load model
+    model_path = MODELS_DIR / "best_xgb_model.pkl"
+    model = joblib.load(model_path)
 
-app = typer.Typer()
+    # Load cleaned data
+    df = load_clean_data()
 
+    # Split into features and target
+    X = df.drop("FraudFound", axis=1)
+    y = df["FraudFound"]
 
-@app.command()
-def main(
-    # ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
-    features_path: Path = PROCESSED_DATA_DIR / "test_features.csv",
-    model_path: Path = MODELS_DIR / "model.pkl",
-    predictions_path: Path = PROCESSED_DATA_DIR / "test_predictions.csv",
-    # -----------------------------------------
-):
-    # ---- REPLACE THIS WITH YOUR OWN CODE ----
-    logger.info("Performing inference for model...")
-    for i in tqdm(range(10), total=10):
-        if i == 5:
-            logger.info("Something happened for iteration 5.")
-    logger.success("Inference complete.")
-    # -----------------------------------------
+    # Pick a test sample
+    sample = X.iloc[[0]]  # Example: First row
 
+    # Predict
+    prediction = model.predict(sample)
+    probability = model.predict_proba(sample)[0][1]
+
+    print("🔍 Prediction:", "Fraud" if prediction[0] == 1 else "Non-Fraud")
+    print("📊 Probability (Fraud):", f"{probability:.4f}")
 
 if __name__ == "__main__":
-    app()
+    predict_on_test_sample()
+    
+    # Then run this on terminal: python -m vehicle_insurance_fraud_detection.modeling.predict
+    # This script is for making predictions on a single test sample using the best model.
+    # It loads the model, the cleaned data, and prints the prediction and probability.
