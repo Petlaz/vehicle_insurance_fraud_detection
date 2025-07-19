@@ -3,8 +3,10 @@
 import time
 import joblib
 import pandas as pd
+from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -12,12 +14,11 @@ from sklearn.metrics import classification_report, confusion_matrix, roc_auc_sco
 from scipy.stats import randint, uniform
 from xgboost import XGBClassifier
 
+from imblearn.over_sampling import SMOTE
 from vehicle_insurance_fraud_detection.dataset import load_clean_data
 from vehicle_insurance_fraud_detection.features import split_features_targets
 from vehicle_insurance_fraud_detection.config import MODELS_DIR
 
-# SMOTE will be applied (optional)
-from imblearn.over_sampling import SMOTE
 
 class XGBoostTuner:
     def __init__(self, random_state=42):
@@ -72,11 +73,18 @@ class XGBoostTuner:
         print(search.best_params_)
         print(f"⏱️ Duration: {duration/60:.2f} minutes")
 
-        # Save best model
+        # Save model
         self.best_model = search.best_estimator_
         MODELS_DIR.mkdir(parents=True, exist_ok=True)
         joblib.dump(self.best_model, MODELS_DIR / "best_xgb_model.pkl")
         print(f"📦 Saved to {MODELS_DIR / 'best_xgb_model.pkl'}")
+
+        # Save feature names
+        feature_names = X.columns.tolist()
+        with open(MODELS_DIR / "feature_names.txt", "w") as f:
+            for name in feature_names:
+                f.write(f"{name}\n")
+        print(f"📝 Feature names saved to {MODELS_DIR / 'feature_names.txt'}")
 
         return self.best_model
 
@@ -91,7 +99,20 @@ if __name__ == "__main__":
 
     tuner = XGBoostTuner()
     best_model = tuner.tune(X_smote, y_smote)
+
     print("🏆 Best model tuned and saved successfully.")
-    
-    # Then run this on terminal: python -m vehicle_insurance_fraud_detection.modeling.tune_and_save_best_xgb
-    
+
+    # Run via: python -m vehicle_insurance_fraud_detection.modeling.tune_and_save_best_xgb
+    # This script tunes the XGBoost model using RandomizedSearchCV and saves the best model.
+    # It also saves the feature names used during training for later use in predictions.
+    # Ensure you have the necessary libraries installed: xgboost, imbalanced-learn, scikit-learn, pandas, matplotlib, seaborn.
+    # The model is saved in the `models` directory as `best_xgb_model.pkl`.
+    # Feature names are saved in `models/feature_names.txt`.
+    # The script also prints the best parameters and F1 score achieved during tuning.
+    # It uses SMOTE to handle class imbalance in the dataset before tuning.
+    # The tuning process includes hyperparameter optimization for the XGBoost classifier.
+    # The script is designed to be run as a module, ensuring proper execution context.
+    # It prints the duration of the tuning process and saves the tuned model and feature names for later use.
+    # The model can be loaded using joblib for predictions in a Streamlit app or other applications.
+    # The script is structured to be reusable and modular, allowing for easy integration
+    # into larger projects or pipelines.

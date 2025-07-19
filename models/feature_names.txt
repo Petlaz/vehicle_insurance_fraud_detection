@@ -1,0 +1,119 @@
+WeekOfMonth
+WeekOfMonthClaimed
+Age
+RepNumber
+Deductible
+DriverRating
+Year
+Month_Aug
+Month_Dec
+Month_Feb
+Month_Jan
+Month_Jul
+Month_Jun
+Month_Mar
+Month_May
+Month_Nov
+Month_Oct
+Month_Sep
+DayOfWeek_Monday
+DayOfWeek_Saturday
+DayOfWeek_Sunday
+DayOfWeek_Thursday
+DayOfWeek_Tuesday
+DayOfWeek_Wednesday
+Make_BMW
+Make_Chevrolet
+Make_Dodge
+Make_Ferrari
+Make_Ford
+Make_Honda
+Make_Jaguar
+Make_Lexus
+Make_Mazda
+Make_Mecedes
+Make_Mercury
+Make_Nisson
+Make_Pontiac
+Make_Porche
+Make_Saab
+Make_Saturn
+Make_Toyota
+Make_VW
+AccidentArea_Urban
+DayOfWeekClaimed_Monday
+DayOfWeekClaimed_Saturday
+DayOfWeekClaimed_Sunday
+DayOfWeekClaimed_Thursday
+DayOfWeekClaimed_Tuesday
+DayOfWeekClaimed_Wednesday
+MonthClaimed_Aug
+MonthClaimed_Dec
+MonthClaimed_Feb
+MonthClaimed_Jan
+MonthClaimed_Jul
+MonthClaimed_Jun
+MonthClaimed_Mar
+MonthClaimed_May
+MonthClaimed_Nov
+MonthClaimed_Oct
+MonthClaimed_Sep
+Sex_Male
+MaritalStatus_Married
+MaritalStatus_Single
+MaritalStatus_Widow
+Fault_Third Party
+PolicyType_Sedan - Collision
+PolicyType_Sedan - Liability
+PolicyType_Sport - All Perils
+PolicyType_Sport - Collision
+PolicyType_Utility - All Perils
+PolicyType_Utility - Collision
+PolicyType_Utility - Liability
+VehicleCategory_Sport
+VehicleCategory_Utility
+VehiclePrice_30,000 to 39,000
+VehiclePrice_40,000 to 59,000
+VehiclePrice_60,000 to 69,000
+VehiclePrice_less than 20,000
+VehiclePrice_more than 69,000
+Days:Policy-Accident_15 to 30
+Days:Policy-Accident_8 to 15
+Days:Policy-Accident_more than 30
+Days:Policy-Accident_none
+Days:Policy-Claim_8 to 15
+Days:Policy-Claim_more than 30
+PastNumberOfClaims_2 to 4
+PastNumberOfClaims_more than 4
+PastNumberOfClaims_none
+AgeOfVehicle_3 years
+AgeOfVehicle_4 years
+AgeOfVehicle_5 years
+AgeOfVehicle_6 years
+AgeOfVehicle_7 years
+AgeOfVehicle_more than 7
+AgeOfVehicle_new
+AgeOfPolicyHolder_18 to 20
+AgeOfPolicyHolder_21 to 25
+AgeOfPolicyHolder_26 to 30
+AgeOfPolicyHolder_31 to 35
+AgeOfPolicyHolder_36 to 40
+AgeOfPolicyHolder_41 to 50
+AgeOfPolicyHolder_51 to 65
+AgeOfPolicyHolder_over 65
+PoliceReportFiled_Yes
+WitnessPresent_Yes
+AgentType_Internal
+NumberOfSuppliments_3 to 5
+NumberOfSuppliments_more than 5
+NumberOfSuppliments_none
+AddressChange-Claim_2 to 3 years
+AddressChange-Claim_4 to 8 years
+AddressChange-Claim_no change
+AddressChange-Claim_under 6 months
+NumberOfCars_2 vehicles
+NumberOfCars_3 to 4
+NumberOfCars_5 to 8
+NumberOfCars_more than 8
+BasePolicy_Collision
+BasePolicy_Liability
