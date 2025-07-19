@@ -83,15 +83,5 @@ with st.form("fraud_form"):
 
         st.success(f"Prediction: {'🟥 Fraud' if prediction == 1 else '🟩 Non-Fraud'}")
         st.info(f"Fraud Probability: {prob:.2%}")
-
-# Run the Streamlit app with: streamlit run streamlit_app.py
-# This app allows users to input claim details and get predictions on potential fraud.
-# It uses the best XGBoost model trained and saved in the modeling directory.
-# The app caches the model loading for performance and uses a form for user input.
-# Ensure you have the necessary libraries installed: streamlit, pandas, joblib, xgboost.
-# The app provides a user-friendly interface to input claim details and receive predictions.
-# The model features are dynamically loaded from a text file to ensure consistency with training.
-# The app is designed to be run in a Streamlit environment, providing an interactive experience.
-# The input form includes sliders, select boxes, and number inputs for various claim attributes.
-# The prediction results are displayed with appropriate styling for clarity.
-# The app can be extended with more features or visualizations as needed.
+        
+# run this app with: streamlit run streamlit_app.py
