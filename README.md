@@ -110,32 +110,20 @@ streamlit run app.py
 * **Test Size: 20%**
 
 
-## Visualizations
+## 📊 Model Evaluation
 
-Here’s the confusion matrix from the final model:
+### 🔍 Classification Report
+- [classification_report.txt](reports/metrics/classification_report.txt)
 
+- [classification_report.json](reports/metrics/classification_report.json)
 
-Accuracy and classification report are saved in:
+### 📈 Visual Reports
 
+- ![Confusion Matrix](reports/figures/confusion_matrix.png)
 
-## Model Metrics
+- ![ROC Curve](reports/figures/roc_curve.png)
 
-**Test Accuracy:** `0.92`
-
-**Classification Report:**
-
-**Precision, Recall, F1-score:**  
-```
-📊 Classification Report (Best XGBoost):
-              precision    recall  f1-score   support
-
-   Non-Fraud       0.95      0.97      0.96      2661
-       Fraud       0.34      0.19      0.24       185
-
-    accuracy                           0.92      2846
-   macro avg       0.64      0.58      0.60      2846
-weighted avg       0.91      0.92      0.91      2846
-```
+- ![Feature Importance](reports/figures/feature_importance.png)
 
 ## Deployment
 
