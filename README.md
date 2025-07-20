@@ -4,11 +4,13 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Machine learning model for detecting fraudulent vehicle insurance claims using classification algorithms and data preprocessing techniques.
+A machine learning project for detecting fraudulent vehicle insurance claims using classification algorithms and modern data preprocessing techniques.
+
 
 ## Data Source
 
-https://www.kaggle.com/datasets/khusheekapoor/vehicle-insurance-fraud-detection?resource=download
+Kaggle - Vehicle Insurance Fraud Detection Dataset
+
 
 
 ## Project Organization
@@ -65,12 +67,13 @@ Vehicle_insurance_fraud_detection
 
 --------
 
-## 🚀 Getting Started
+# Getting Started
 
-### 📦 Create and activate the environment
+## Create and activate the environment
 
 ```bash
 conda env create -f environment.yml
+
 conda activate fraud-py311
 
 ## Quickstarts
@@ -103,16 +106,16 @@ streamlit run app.py
 
 ## Model Details
 
-* **Algorithm: XGBoost**
+- **Algorithm: XGBoost**
 
-* **Scaling: StandardScaler**
+- **Scaling: StandardScaler**
 
-* **Test Size: 20%**
+- **Test Size: 20%**
 
 
-## 📊 Model Evaluation
+## Model Evaluation
 
-### 🔍 Classification Report
+### Classification Report
 
 - [classification_report.txt](reports/metrics/classification_report.txt)
 
@@ -136,11 +139,11 @@ streamlit run app.py
 
 import pandas as pd
 
-# **Replace with a real feature vector from your dataset**
+### Replace with a real feature vector from your dataset**
 
 sample = X_test.iloc[[0]]  # one row
 
-# **Predict**
+### Predict
 
 prediction = best_xgb.predict(sample)
 
@@ -173,7 +176,7 @@ print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 
 Pull requests are welcome. Open an issue to suggest changes or improvements.
 
-## Contact
+##  Contact
  
  Peter Ugonna Obi
  
