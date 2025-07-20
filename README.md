@@ -8,6 +8,8 @@ Machine learning model for detecting fraudulent vehicle insurance claims using c
 
 ## Data Source
 
+https://www.kaggle.com/datasets/khusheekapoor/vehicle-insurance-fraud-detection?resource=download
+
 
 ## Project Organization
 
