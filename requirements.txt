@@ -23,3 +23,5 @@ typer==0.12.3
 jupyterlab==4.2.1
 notebook==7.2.0
 pydantic==2.8.0
+kaleido==0.2.1
+

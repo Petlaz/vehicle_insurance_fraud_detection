@@ -1,3 +1,5 @@
+import os
+os.makedirs("reports/figures", exist_ok=True)
 import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
