@@ -104,7 +104,7 @@ pytest tests/
 
 streamlit run app.py
 
-## Model Details
+## Models Details
 
 - **Algorithm: XGBoost**
 
@@ -176,7 +176,7 @@ print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 
 Pull requests are welcome. Open an issue to suggest changes or improvements.
 
-##  Contact
+## Contact
  
  Peter Ugonna Obi
  
