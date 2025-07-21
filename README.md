@@ -1,4 +1,4 @@
-# Vehicle Insurance Fraud Detection
+🚗 Vehicle Insurance Fraud Detection
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
@@ -7,13 +7,11 @@
 A machine learning project for detecting fraudulent vehicle insurance claims using classification algorithms and modern data preprocessing techniques.
 
 
-## Data Source
-
-Kaggle - Vehicle Insurance Fraud Detection Dataset
-
+📂 Data Source
+Dataset: Kaggle – Vehicle Insurance Fraud Detection Dataset
 
 
-## Project Organization
+🧭 Project Structure
 
 ```
 Vehicle_insurance_fraud_detection
@@ -67,61 +65,55 @@ Vehicle_insurance_fraud_detection
 
 --------
 
-# Getting Started
+🚀 Getting Started
 
-## Create and activate the environment
+1. Create & activate environment
 
 ```bash
 conda env create -f environment.yml
 
 conda activate fraud-py311
 
-## Quickstarts
+2. Clone and install dependencies
 
-1. **Clone the repository**
-
-2. **Install dependencies**
-
+git clone https://github.com/petlaz/vehicle_insurance_fraud_detection.git
+cd vehicle_insurance_fraud_detection
 pip install -r requirements.txt
 
-3. **Train the model**
 
-python -m python -m vehicle_insurance_fraud_detection.modeling.train
+ ⚙️ Quickstart Commands
 
-4. **Generate report**
+| Task              | Command                                                                 |
+| ----------------- | ----------------------------------------------------------------------- |
+| Train the model   | `python -m vehicle_insurance_fraud_detection.modeling.train`            |
+| Run prediction    | `python -m vehicle_insurance_fraud_detection.modeling.predict`          |
+| Generate reports  | `python -m vehicle_insurance_fraud_detection.reporting.generate_report` |
+| Run tests         | `pytest tests/`                                                         |
+| Run Streamlit app | `streamlit run app.py`                                                  |
 
-python -m vehicle_streamlit_fraud_detection.reporting.generate_report
+🧠 Model Details
 
-5. **Run prediction**
+- Algorithm: XGBoost
 
-python -m vehicle_insurance_fraud_detection.modeling.predict
+- Scaling: StandardScaler
 
-6. **Run Test**
+- Sampling Strategy: SMOTE
 
-pytest tests/
+- Evaluation Metric: F1-score
 
-7. **Run Streamlit App**
-
-streamlit run app.py
-
-## Models Details
-
-- **Algorithm: XGBoost**
-
-- **Scaling: StandardScaler**
-
-- **Test Size: 20%**
+- Test Size: 20%
 
 
-## Model Evaluation
+📊 Model Evaluation
 
-### Classification Report
+Classification Reports
 
-- [classification_report.txt](reports/metrics/classification_report.txt)
+classification_report.txt
 
-- [classification_report.json](reports/metrics/classification_report.json)
+classification_report.json
 
-### 📈 Visual Reports
+
+📈 Visual Reports
 
 - ![Confusion Matrix](reports/figures/confusion_matrix.png)
 
@@ -129,21 +121,25 @@ streamlit run app.py
 
 - ![Feature Importance](reports/figures/feature_importance.png)
 
-## Deployment
+
+🌐 Deployment
+
+* The app is deployed with Streamlit
+
+* Launch:
+
+streamlit run app.py
 
 
-
-
-
-## Sample Prediction
+🔮 Sample Prediction
 
 import pandas as pd
 
-### Replace with a real feature vector from your dataset**
+# Replace with actual feature vector
 
-sample = X_test.iloc[[0]]  # one row
+sample = X_test.iloc[[0]]
 
-### Predict
+# Predict
 
 prediction = best_xgb.predict(sample)
 
@@ -153,15 +149,20 @@ print("🔍 Prediction:", "Fraud" if prediction[0] == 1 else "Non-Fraud")
 
 print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 
-## References
+
+🔗 References
 
 - [XGBoost Documentation](https://xgboost.readthedocs.io/)
+
 - [SMOTE - Imbalanced-learn](https://imbalanced-learn.org/)
+
 - [Scikit-learn Docs](https://scikit-learn.org/)
-- UCI Vehicle Insurance Fraud Dataset (placeholder if used)
+
 - Kaggle Discussions on Fraud Detection
 
-## Requirements
+
+📦 Requirements
+
 - Python 3.11
 - scikit-learn
 - pandas
@@ -172,16 +173,19 @@ print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 - (see `requirements.txt` for full list)
 
 
-## Contributing
+🤝 Contributing
 
 Pull requests are welcome. Open an issue to suggest changes or improvements.
 
-## Contact
- 
- Peter Ugonna Obi
- 
- For questions, open an issue or reach out directly.
 
-## License
+📬 Contact
 
-MIT License.
+Peter Ugonna Obi
+For questions or feedback, open an issue or reach out directly.
+
+
+📄 License
+
+This project is licensed under the MIT License.
+
+
