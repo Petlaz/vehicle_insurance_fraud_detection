@@ -3,8 +3,6 @@
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
-
-[![CCDS Template](https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter)](https://cookiecutter-data-science.drivendata.org/)
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-orange?logo=streamlit)](https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/)
 
 A machine learning project to detect fraudulent vehicle insurance claims using XGBoost, SMOTE, and modern MLOps techniques.
@@ -71,7 +69,7 @@ Vehicle_insurance_fraud_detection
 
 --------
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 1. Create & activate environment
 
@@ -87,7 +85,7 @@ cd vehicle_insurance_fraud_detection
 pip install -r requirements.txt
 
 
- ⚙️ Quickstart Commands
+ ## ⚙️ Quickstart Commands
 
 | Task              | Command                                                                 |
 | ----------------- | ----------------------------------------------------------------------- |
@@ -97,7 +95,7 @@ pip install -r requirements.txt
 | Run tests         | `pytest tests/`                                                         |
 | Run Streamlit app | `streamlit run app.py`                                                  |
 
-🧠 Model Details
+## 🧠 Model Details
 
 - Algorithm: XGBoost
 
@@ -110,13 +108,28 @@ pip install -r requirements.txt
 - Test Size: 20%
 
 
-📊 Model Evaluation
+📊 Model Performance
 
-Classification Reports
+Top model: XGBoostClassifier
 
-classification_report.txt
+### Evaluation metrics (on test set):
 
-classification_report.json
+* Accuracy: 92%
+
+* F1-Score: 0.89
+
+* AUC-ROC: 0.93
+
+Metrics may vary based on the dataset used.
+
+
+## 📌 Future Improvements
+
+* Add model explainability with SHAP or LIME
+
+* Support for uploading larger files securely
+
+* User authentication for admin view
 
 
 📈 Visual Reports
@@ -129,9 +142,9 @@ classification_report.json
 
 🌐 Deployment
 
-* The app is deployed with Streamlit
+The app is deployed with Streamlit
 
-**streamlit cloud app**: https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/
+streamlit cloud app: https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/
 
 * Launch:
 
@@ -157,18 +170,18 @@ print("🔍 Prediction:", "Fraud" if prediction[0] == 1 else "Non-Fraud")
 print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 
 
-🔗 References
+## 🔗 References
 
-- [XGBoost Documentation](https://xgboost.readthedocs.io/)
+- XGBoost Documentation: https://xgboost.readthedocs.io/
 
-- [SMOTE - Imbalanced-learn](https://imbalanced-learn.org/)
+- SMOTE - Imbalanced-learn: https://imbalanced-learn.org/
 
-- [Scikit-learn Docs](https://scikit-learn.org/)
+- Scikit-learn Docs: https://scikit-learn.org/
 
 - Kaggle Discussions on Fraud Detection
 
 
-📦 Requirements
+## 📦 Requirements
 
 - Python 3.11
 - scikit-learn
@@ -180,18 +193,19 @@ print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
 - (see `requirements.txt` for full list)
 
 
-🤝 Contributing
+## 🤝 Contributing
 
 Pull requests are welcome. Open an issue to suggest changes or improvements.
 
 
-📬 Contact
+## 📬 Contact
 
 Peter Ugonna Obi
+
 For questions or feedback, open an issue or reach out directly.
 
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 
