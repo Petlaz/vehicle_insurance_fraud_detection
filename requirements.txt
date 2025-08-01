@@ -1,11 +1,12 @@
 # Core packages for your Streamlit inference app
-streamlit==1.35.0
-pandas==2.2.2
-numpy==1.26.4
-joblib==1.5.1
-scikit-learn==1.5.0
-xgboost==3.0.2
-imbalanced-learn==0.12.4
-matplotlib==3.9.0
-seaborn==0.12.2
-scipy==1.11.4
+streamlit>=1.35.0,<2.0.0
+pandas>=2.2.2,<3.0.0
+numpy>=1.26.4,<2.0.0
+joblib>=1.5.1,<2.0.0
+scikit-learn>=1.5.0,<2.0.0
+xgboost>=3.0.2,<4.0.0
+imbalanced-learn>=0.12.4,<1.0.0
+matplotlib>=3.9.0,<4.0.0
+seaborn>=0.12.2,<0.13.0
+scipy>=1.11.4,<2.0.0
+
