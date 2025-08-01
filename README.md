@@ -10,9 +10,7 @@
 Machine learning system to detect fraudulent vehicle insurance claims using:
 
 - **XGBoost** for classification  
-
 - **SMOTE** for handling class imbalance 
-
 - **MLOps** best practices for reproducibility
 
 ## 📂 Dataset  
@@ -22,154 +20,202 @@ Machine learning system to detect fraudulent vehicle insurance claims using:
 **Features**: 
 
 - Claim details
-
 - Policyholder information
-
 - Vehicle specifications 
-
 - Historical transaction data  
 
 **Target Variable**:
 
 `fraud_label` (0 = Legitimate, 1 = Fraud)
 
+## 🏗️ Project Structure
 
-## 🏗️ Project Structure 
-
-,,,
 vehicle_insurance_fraud_detection/
-├── data/
-│ ├── raw/ # Original immutable data
-│ ├── processed/ # Cleaned data for modeling
-│ └── interim/ # Intermediate transformations
-├── models/ # Serialized models
-├── notebooks/ # Jupyter notebooks (1.0-eda.ipynb)
-├── reports/ # Analysis outputs
-│ └── figures/ # Visualizations
-├── src/ # Python package
-│ ├── init.py
-│ ├── config.py # Project configurations
-│ ├── features.py # Feature engineering
-│ └── modeling/ # ML pipelines
-│ ├── train.py
-│ └── predict.py
-├── app.py # Streamlit application
-├── environment.yml # Conda environment
-└── requirements.txt # Pip dependencies
-,,,
+
+- data/
+  - raw/              # Original immutable data
+  - processed/        # Cleaned data for modeling
+  - interim/          # Intermediate transformations
+
+- models/             # Serialized models
+
+- notebooks/          # Jupyter notebooks (e.g., 1.0-eda.ipynb)
+
+- reports/            # Analysis outputs
+  - figures/          # Visualizations
+
+- src/                # Python package
+  - __init__.py
+  - config.py         # Project configurations
+  - features.py       # Feature engineering
+  - modeling/         # ML pipelines
+    - train.py
+    - predict.py
+
+- app.py              # Streamlit application
+
+- environment.yml     # Conda environment
+
+- requirements.txt    # Pip dependencies
 
 ## 🚀 Quick Start  
 
 **Installation**:  
 ```bash
-
 git clone https://github.com/petlaz/vehicle_insurance_fraud_detection.git
-
 cd vehicle_insurance_fraud_detection
-
 conda env create -f environment.yml
-
 conda activate fraud-py311
-
 pip install -r requirements.txt
 
 Commands
 
-Action	Command
+| Action           | Command                          |
+| ---------------- | -------------------------------- |
+| Preprocess data  | `make data`                      |
+| Train model      | `python -m src.modeling.train`   |
+| Make predictions | `python -m src.modeling.predict` |
+| Launch dashboard | `streamlit run app.py`           |
 
-Preprocess data	make data
 
-Train model	python -m src.modeling.train
-
-Make predictions	python -m src.modeling.predict
-
-Launch dashboard	streamlit run app.py
-
-## 📈 Model Performance
+# 📈 Model Performance
 
 ### 🔧 Configuration
-- **Algorithm**: `XGBoostClassifier`
-- **Hyperparameter Tuning**: `Optuna`
-- **Class Balancing**: `SMOTE`
+
+- **Algorithm**: `XGBoostClassifier`  
+- **Hyperparameter Tuning**: `Optuna`  
+- **Class Balancing**: `SMOTE`  
 - **Test Size**: `20%`
 
 ### 📊 Metrics
 
-| Metric     | Score |
-|------------|-------|
-| Accuracy   | 92%   |
-| Precision  | 0.91  |
-| Recall     | 0.87  |
-| F1-Score   | 0.89  |
-| AUC-ROC    | 0.93  |
+| Metric    | Score |
+|-----------|-------|
+| Accuracy  | 92%   |
+| Precision | 0.91  |
+| Recall    | 0.87  |
+| F1-Score  | 0.89  |
+| AUC-ROC   | 0.93  |
+
+
+# 🌐 Deployment
+
+## Cloud Deployment
+
+The vehicle insurance fraud detection app is live and hosted on **Streamlit Cloud**:
+
+🔗 [Live App on Streamlit Cloud](https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/)
 
 ---
 
+## Local Deployment
 
-## 🌐 Deployment
+To run the app locally on your machine, follow these steps:
 
-- **Cloud App**: [Live on Streamlit Cloud](#) <!https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/ -->
+1. Ensure you have all dependencies installed (see `requirements.txt` or `environment.yml`).
 
-- **Run Locally**:
+2. From the project root directory, run:
 
 ```bash
 streamlit run app.py
 
-🔮 Usage Example
 
-python
+# 🔮 Usage Example
 
+This example demonstrates how to load the trained XGBoost model and make a prediction on a sample input.
+
+## Prerequisites
+
+- Python 3.11
+- Required packages installed (`joblib`, `pandas`, etc.)
+- Trained model saved as `models/xgboost_model.pkl`
+
+---
+
+## Example Code
+
+```python
 import joblib
-
 import pandas as pd
 
-# Load model
-
+# Load the trained model
 model = joblib.load("models/xgboost_model.pkl")
 
-# Sample prediction
-
+# Prepare a sample input DataFrame
 sample = pd.DataFrame({
     'claim_amount': [5000],
     'vehicle_age': [3],
     'past_claims': [2]
 })
 
-pred = model.predict(sample)
+# Make prediction
+prediction = model.predict(sample)
 
-prob = model.predict_proba(sample)[0][1]
+# Get fraud probability
+probability = model.predict_proba(sample)[0][1]
 
-print(f"Prediction: {'Fraud' if pred[0] == 1 else 'Legitimate'}")
+print(f"Prediction: {'Fraud' if prediction[0] == 1 else 'Legitimate'}")
+print(f"Fraud Probability: {probability:.1%}")
 
-print(f"Fraud Probability: {prob:.1%}")
 
-## 📌 Roadmap
+# 🛣️ Roadmap
 
-* Initial model pipeline
+This roadmap outlines the planned features and improvements for the Vehicle Insurance Fraud Detection project.
 
-* SHAP/LIME explainability
+## Upcoming Features
 
-* FastAPI backend
+- **Initial Model Pipeline**  
+  Establish a robust and reproducible machine learning pipeline for data preprocessing, model training, and evaluation.
 
-* User authentication
+- **SHAP / LIME Explainability**  
+  Integrate explainability tools like SHAP and LIME to provide insights into model predictions and feature importance.
 
-## 🤝 Contributing
+- **FastAPI Backend**  
+  Develop a FastAPI backend service to serve the model via REST API, enabling scalable and flexible integration.
 
-- Fork the repository
+- **User Authentication**  
+  Implement user authentication and authorization for the application to secure access and enable personalized features.
 
-- Create your feature branch
+## Future Enhancements
 
-Submit a pull request
+- Real-time fraud detection with streaming data support  
+- Advanced ensemble modeling and hyperparameter tuning automation  
+- Dashboard enhancements with additional visualization and interactivity  
+- Integration with external fraud databases and alerts  
 
-📬 Contact
+---
 
-## Peter Ugonna Obi
+Contributions and suggestions are welcome to help evolve this roadmap!
 
-* Email: peter.obi96@yahoo.com
 
-* LinkedIn: linkedin.com/in/peter-obi-15a424161
+# 👤 Peter Ugonna Obi
 
-## 📜 License
+Peter Ugonna Obi is the author and maintainer of this Vehicle Insurance Fraud Detection project.
 
-MIT License. See LICENSE for details.
+## Contact Information
+
+- **Email:** peter.obi96@yahoo.com  
+- **LinkedIn:** [linkedin.com/in/peter-obi-15a424161](https://linkedin.com/in/peter-obi-15a424161)
+
+## About Me
+
+I am passionate about machine learning, data science, and building impactful AI solutions. This project reflects my commitment to developing practical and explainable models for real-world problems such as insurance fraud detection.
+
+Feel free to reach out with questions, suggestions, or collaboration opportunities!
+
+---
+
+Thank you for your interest and support.
+
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+See the [LICENSE](LICENSE) file for more details.
+
+---
+
+You are free to use, modify, and distribute this software under the terms of the MIT License.
+
 
