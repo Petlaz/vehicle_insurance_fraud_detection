@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📝 Overview 
+📝 Overview 
 
 Machine learning system to detect fraudulent vehicle insurance claims using:
 
@@ -15,7 +15,7 @@ Machine learning system to detect fraudulent vehicle insurance claims using:
 
 - **MLOps** best practices for reproducibility
 
-## 📂 Dataset  
+📂 Dataset  
 
 **Source**: [Kaggle Vehicle Insurance Fraud Detection](https://www.kaggle.com/datasets/)
 
@@ -31,10 +31,12 @@ Machine learning system to detect fraudulent vehicle insurance claims using:
 
 **Target Variable**:
 
-`fraud_label` (0 = Legitimate, 1 = Fraud)  
+`fraud_label` (0 = Legitimate, 1 = Fraud)
 
-## 🏗️ Project Structure  
 
+🏗️ Project Structure 
+
+,,,
 vehicle_insurance_fraud_detection/
 ├── data/
 │ ├── raw/ # Original immutable data
@@ -54,9 +56,9 @@ vehicle_insurance_fraud_detection/
 ├── app.py # Streamlit application
 ├── environment.yml # Conda environment
 └── requirements.txt # Pip dependencies
+,,,
 
-
-## 🚀 Quick Start  
+🚀 Quick Start  
 
 **Installation**:  
 ```bash
@@ -83,9 +85,9 @@ Make predictions	python -m src.modeling.predict
 
 Launch dashboard	streamlit run app.py
 
-## 🧠 Model Performance
+🧠 Model Performance
 
-**Configuration**:
+** Configuration:
 
 Algorithm: XGBoostClassifier
 
@@ -95,9 +97,9 @@ Class Balancing: SMOTE
 
 Test Size: 20%
 
-## Metrics
+* Metrics
 
-### Metric Score:
+** Metric Score:
 
 Accuracy 92%
 
@@ -109,7 +111,7 @@ F1-Score 0.89
 
 AUC-ROC 0.93
 
-## 🌐 Deployment
+🌐 Deployment
 
 Web App: Streamlit Cloud
 
@@ -118,7 +120,7 @@ Local Deployment:
 bash
 streamlit run app.py
 
-## 🔮 Usage Example
+🔮 Usage Example
 
 python
 
@@ -146,7 +148,7 @@ print(f"Prediction: {'Fraud' if pred[0] == 1 else 'Legitimate'}")
 
 print(f"Fraud Probability: {prob:.1%}")
 
-## 📌 Roadmap
+📌 Roadmap
 
 * Initial model pipeline
 
@@ -156,7 +158,7 @@ print(f"Fraud Probability: {prob:.1%}")
 
 * User authentication
 
-## 🤝 Contributing
+🤝 Contributing
 
 - Fork the repository
 
@@ -164,7 +166,7 @@ print(f"Fraud Probability: {prob:.1%}")
 
 Submit a pull request
 
-## 📬 Contact
+📬 Contact
 
 Peter Ugonna Obi
 
@@ -172,7 +174,7 @@ Peter Ugonna Obi
 
 * LinkedIn: linkedin.com/in/peter-obi-15a424161
 
-## 📜 License
+📜 License
 
 MIT License. See LICENSE for details.
 
