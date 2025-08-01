@@ -4,14 +4,20 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-A machine learning project for detecting fraudulent vehicle insurance claims using classification algorithms and modern data preprocessing techniques.
+[![CCDS Template](https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter)](https://cookiecutter-data-science.drivendata.org/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-orange?logo=streamlit)](https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/)
 
+A machine learning project to detect fraudulent vehicle insurance claims using XGBoost, SMOTE, and modern MLOps techniques.
 
-📂 Data Source
-Dataset: Kaggle – Vehicle Insurance Fraud Detection Dataset
+---
 
+## 📂 Data Source
 
-🧭 Project Structure
+**Dataset**: [Kaggle – Vehicle Insurance Fraud Detection Dataset](https://www.kaggle.com/datasets/)
+
+---
+
+## 🧭 Project Structure
 
 ```
 Vehicle_insurance_fraud_detection
@@ -121,10 +127,11 @@ classification_report.json
 
 - ![Feature Importance](reports/figures/feature_importance.png)
 
-
 🌐 Deployment
 
 * The app is deployed with Streamlit
+
+**streamlit cloud app**: https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/
 
 * Launch:
 
