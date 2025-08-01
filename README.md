@@ -1,212 +1,178 @@
-🚗 Vehicle Insurance Fraud Detection
+# 🚗 Vehicle Insurance Fraud Detection  
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-orange?logo=streamlit)](https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/)
+[![Cookiecutter Data Science](https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter)](https://cookiecutter-data-science.drivendata.org/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-FF4B4B?logo=streamlit)](https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A machine learning project to detect fraudulent vehicle insurance claims using XGBoost, SMOTE, and modern MLOps techniques.
+## 📝 Overview 
 
----
+Machine learning system to detect fraudulent vehicle insurance claims using:
 
-## 📂 Data Source
+- **XGBoost** for classification  
 
-**Dataset**: [Kaggle – Vehicle Insurance Fraud Detection Dataset](https://www.kaggle.com/datasets/)
+- **SMOTE** for handling class imbalance 
 
----
+- **MLOps** best practices for reproducibility
 
-## 🧭 Project Structure
+## 📂 Dataset  
 
-```
-Vehicle_insurance_fraud_detection
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         vehicle_insurance_fraud_detection and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── vehicle_insurance_fraud_detection   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes vehicle_insurance_fraud_detection a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+**Source**: [Kaggle Vehicle Insurance Fraud Detection](https://www.kaggle.com/datasets/)
 
---------
+**Features**: 
 
-## 🚀 Getting Started
+- Claim details
 
-1. Create & activate environment
+- Policyholder information
 
+- Vehicle specifications 
+
+- Historical transaction data  
+
+**Target Variable**:
+
+`fraud_label` (0 = Legitimate, 1 = Fraud)  
+
+## 🏗️ Project Structure  
+
+vehicle_insurance_fraud_detection/
+├── data/
+│ ├── raw/ # Original immutable data
+│ ├── processed/ # Cleaned data for modeling
+│ └── interim/ # Intermediate transformations
+├── models/ # Serialized models
+├── notebooks/ # Jupyter notebooks (1.0-eda.ipynb)
+├── reports/ # Analysis outputs
+│ └── figures/ # Visualizations
+├── src/ # Python package
+│ ├── init.py
+│ ├── config.py # Project configurations
+│ ├── features.py # Feature engineering
+│ └── modeling/ # ML pipelines
+│ ├── train.py
+│ └── predict.py
+├── app.py # Streamlit application
+├── environment.yml # Conda environment
+└── requirements.txt # Pip dependencies
+
+
+## 🚀 Quick Start  
+
+**Installation**:  
 ```bash
+
+git clone https://github.com/petlaz/vehicle_insurance_fraud_detection.git
+
+cd vehicle_insurance_fraud_detection
+
 conda env create -f environment.yml
 
 conda activate fraud-py311
 
-2. Clone and install dependencies
-
-git clone https://github.com/petlaz/vehicle_insurance_fraud_detection.git
-cd vehicle_insurance_fraud_detection
 pip install -r requirements.txt
 
+Commands
 
- ## ⚙️ Quickstart Commands
+Action	Command
 
-| Task              | Command                                                                 |
-| ----------------- | ----------------------------------------------------------------------- |
-| Train the model   | `python -m vehicle_insurance_fraud_detection.modeling.train`            |
-| Run prediction    | `python -m vehicle_insurance_fraud_detection.modeling.predict`          |
-| Generate reports  | `python -m vehicle_insurance_fraud_detection.reporting.generate_report` |
-| Run tests         | `pytest tests/`                                                         |
-| Run Streamlit app | `streamlit run app.py`                                                  |
+Preprocess data	make data
 
-## 🧠 Model Details
+Train model	python -m src.modeling.train
 
-- Algorithm: XGBoost
+Make predictions	python -m src.modeling.predict
 
-- Scaling: StandardScaler
+Launch dashboard	streamlit run app.py
 
-- Sampling Strategy: SMOTE
+## 🧠 Model Performance
 
-- Evaluation Metric: F1-score
+**Configuration**:
 
-- Test Size: 20%
+Algorithm: XGBoostClassifier
 
+Hyperparameter Tuning: Optuna
 
-📊 Model Performance
+Class Balancing: SMOTE
 
-Top model: XGBoostClassifier
+Test Size: 20%
 
-### Evaluation metrics (on test set):
+## Metrics
 
-* Accuracy: 92%
+### Metric Score:
 
-* F1-Score: 0.89
+Accuracy 92%
 
-* AUC-ROC: 0.93
+Precision 0.91
 
-Metrics may vary based on the dataset used.
+Recall 0.87
 
+F1-Score 0.89
 
-## 📌 Future Improvements
+AUC-ROC 0.93
 
-* Add model explainability with SHAP or LIME
+## 🌐 Deployment
 
-* Support for uploading larger files securely
+Web App: Streamlit Cloud
 
-* User authentication for admin view
+Local Deployment:
 
-
-📈 Visual Reports
-
-- ![Confusion Matrix](reports/figures/confusion_matrix.png)
-
-- ![ROC Curve](reports/figures/roc_curve.png)
-
-- ![Feature Importance](reports/figures/feature_importance.png)
-
-🌐 Deployment
-
-The app is deployed with Streamlit
-
-streamlit cloud app: https://vehicleinsurancefrauddetection-mmqyvhriq3jdmluu3tpqog.streamlit.app/
-
-* Launch:
-
+bash
 streamlit run app.py
 
+## 🔮 Usage Example
 
-🔮 Sample Prediction
+python
+
+import joblib
 
 import pandas as pd
 
-# Replace with actual feature vector
+# Load model
 
-sample = X_test.iloc[[0]]
+model = joblib.load("models/xgboost_model.pkl")
 
-# Predict
+# Sample prediction
 
-prediction = best_xgb.predict(sample)
+sample = pd.DataFrame({
+    'claim_amount': [5000],
+    'vehicle_age': [3],
+    'past_claims': [2]
+})
 
-probability = best_xgb.predict_proba(sample)
+pred = model.predict(sample)
 
-print("🔍 Prediction:", "Fraud" if prediction[0] == 1 else "Non-Fraud")
+prob = model.predict_proba(sample)[0][1]
 
-print("📊 Probability (Fraud):", f"{probability[0][1]:.4f}")
+print(f"Prediction: {'Fraud' if pred[0] == 1 else 'Legitimate'}")
 
+print(f"Fraud Probability: {prob:.1%}")
 
-## 🔗 References
+## 📌 Roadmap
 
-- XGBoost Documentation: https://xgboost.readthedocs.io/
+* Initial model pipeline
 
-- SMOTE - Imbalanced-learn: https://imbalanced-learn.org/
+* SHAP/LIME explainability
 
-- Scikit-learn Docs: https://scikit-learn.org/
+* FastAPI backend
 
-- Kaggle Discussions on Fraud Detection
-
-
-## 📦 Requirements
-
-- Python 3.11
-- scikit-learn
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- joblib
-- (see `requirements.txt` for full list)
-
+* User authentication
 
 ## 🤝 Contributing
 
-Pull requests are welcome. Open an issue to suggest changes or improvements.
+- Fork the repository
 
+- Create your feature branch
+
+Submit a pull request
 
 ## 📬 Contact
 
 Peter Ugonna Obi
 
-For questions or feedback, open an issue or reach out directly.
+* Email: peter.obi96@yahoo.com
 
+* LinkedIn: linkedin.com/in/peter-obi-15a424161
 
-## 📄 License
+## 📜 License
 
-This project is licensed under the MIT License.
-
+MIT License. See LICENSE for details.
 
