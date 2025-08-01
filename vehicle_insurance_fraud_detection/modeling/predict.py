@@ -32,6 +32,6 @@ def predict_on_test_sample():
 if __name__ == "__main__":
     predict_on_test_sample()
     
-    # Then run this on terminal: python -m vehicle_insurance_fraud_detection.modeling.predict
+    # Then run this on terminal: python3 -m vehicle_insurance_fraud_detection.modeling.predict
     # This script is for making predictions on a single test sample using the best model.
     # It loads the model, the cleaned data, and prints the prediction and probability.
