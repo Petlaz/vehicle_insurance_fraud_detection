@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📝 Overview 
+📝 Overview 
 
 Machine learning system to detect fraudulent vehicle insurance claims using:
 
@@ -13,7 +13,7 @@ Machine learning system to detect fraudulent vehicle insurance claims using:
 - **SMOTE** for handling class imbalance 
 - **MLOps** best practices for reproducibility
 
-## 📂 Dataset  
+📂 Dataset  
 
 **Source**: [Kaggle Vehicle Insurance Fraud Detection](https://www.kaggle.com/datasets/)
 
@@ -28,7 +28,7 @@ Machine learning system to detect fraudulent vehicle insurance claims using:
 
 `fraud_label` (0 = Legitimate, 1 = Fraud)
 
-## 🏗️ Project Structure
+🏗️ Project Structure
 
 ```
 Vehicle_Insurance_Fraud_Detection
@@ -81,7 +81,7 @@ Vehicle_Insurance_Fraud_Detection
 ```
 
 
-## 🚀 Quick Start  
+🚀 Quick Start  
 
 **Installation**:  
 ```bash
@@ -101,16 +101,16 @@ Commands
 | Launch dashboard | `streamlit run app.py`           |
 
 
-# 📈 **Model Performance
+📈 **Model Performance
 
-### 🔧 Configuration
+🔧 Configuration
 
 - **Algorithm**: `XGBoostClassifier`  
 - **Hyperparameter Tuning**: `Optuna`  
 - **Class Balancing**: `SMOTE`  
 - **Test Size**: `20%`
 
-### 📊 Metrics
+📊 Metrics
 
 | Metric    | Score |
 |-----------|-------|
@@ -121,9 +121,9 @@ Commands
 | AUC-ROC   | 0.93  |
 
 
-# 🌐 Deployment
+🌐 Deployment
 
-## Cloud Deployment
+1. Cloud Deployment
 
 The vehicle insurance fraud detection app is live and hosted on **Streamlit Cloud**:
 
@@ -131,7 +131,7 @@ The vehicle insurance fraud detection app is live and hosted on **Streamlit Clou
 
 ---
 
-## Local Deployment
+2. Local Deployment
 
 To run the app locally on your machine, follow these steps:
 
@@ -143,11 +143,11 @@ To run the app locally on your machine, follow these steps:
 streamlit run app.py
 
 
-# 🔮 Usage Example
+🔮 Usage Example
 
 This example demonstrates how to load the trained XGBoost model and make a prediction on a sample input.
 
-## Prerequisites
+Prerequisites
 
 - Python 3.11
 - Required packages installed (`joblib`, `pandas`, etc.)
@@ -155,7 +155,7 @@ This example demonstrates how to load the trained XGBoost model and make a predi
 
 ---
 
-## Example Code
+Example Code:
 
 ```python
 import joblib
@@ -181,11 +181,11 @@ print(f"Prediction: {'Fraud' if prediction[0] == 1 else 'Legitimate'}")
 print(f"Fraud Probability: {probability:.1%}")
 
 
-# 🛣️ Roadmap
+🛣️ Roadmap
 
 This roadmap outlines the planned features and improvements for the Vehicle Insurance Fraud Detection project.
 
-## Upcoming Features
+Upcoming Features
 
 - **Initial Model Pipeline**  
   Establish a robust and reproducible machine learning pipeline for data preprocessing, model training, and evaluation.
@@ -199,7 +199,7 @@ This roadmap outlines the planned features and improvements for the Vehicle Insu
 - **User Authentication**  
   Implement user authentication and authorization for the application to secure access and enable personalized features.
 
-## Future Enhancements
+Future Enhancements
 
 - Real-time fraud detection with streaming data support  
 - Advanced ensemble modeling and hyperparameter tuning automation  
@@ -211,16 +211,16 @@ This roadmap outlines the planned features and improvements for the Vehicle Insu
 Contributions and suggestions are welcome to help evolve this roadmap!
 
 
-# 👤 Peter Ugonna Obi
+👤 Peter Ugonna Obi
 
 Peter Ugonna Obi is the author and maintainer of this Vehicle Insurance Fraud Detection project.
 
-## Contact Information
+Contact Information
 
 - **Email:** peter.obi96@yahoo.com  
 - **LinkedIn:** [linkedin.com/in/peter-obi-15a424161](https://linkedin.com/in/peter-obi-15a424161)
 
-## About Me
+About Me
 
 I am passionate about machine learning, data science, and building impactful AI solutions. This project reflects my commitment to developing practical and explainable models for real-world problems such as insurance fraud detection.
 
@@ -231,7 +231,7 @@ Feel free to reach out with questions, suggestions, or collaboration opportuniti
 Thank you for your interest and support.
 
 
-# 📜 License
+📜 License
 
 This project is licensed under the MIT License.
 
